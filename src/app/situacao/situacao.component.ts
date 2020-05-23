@@ -13,12 +13,12 @@ export class SituacaoComponent implements OnInit {
 
   constructor(private unidadeService: UnidadeService) { }
 
-  unidades: Unidade[]  
+  unidade: Unidade 
   
   ngOnInit(): void {
-      this.unidadeService.list(new QueryOptions).
-                subscribe( unidades => {
-                    this.unidades = unidades
+      this.unidadeService.read(1).
+              subscribe( unidade => {
+                    this.unidade = unidade
                 });
   }
 

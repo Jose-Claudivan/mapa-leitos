@@ -7,6 +7,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { SituacaoComponent } from './situacao/situacao.component';
+import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
 
 
 
@@ -14,7 +15,8 @@ import { SituacaoComponent } from './situacao/situacao.component';
   declarations: [
     AppComponent,
     MapComponent,
-    SituacaoComponent
+    SituacaoComponent,
+    UnidadeAdmComponent
   ],
   imports: [
     BrowserModule,
