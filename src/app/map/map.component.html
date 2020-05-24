@@ -1,4 +1,4 @@
-<h1>MAPA</h1>
+<h1>Click Leitos</h1>
 <agm-map 
   [latitude]="lat"
   [longitude]="lng"
@@ -8,25 +8,25 @@
   (mapClick)="mapClicked($event)">
 
   <agm-marker 
-      *ngFor="let m of markers; let i = index"
-      (markerClick)="clickedMarker(m.label, i)"
-      [latitude]="m.lat"
-      [longitude]="m.lng"
-      [label]="m.label"
-      [markerDraggable]="m.draggable"
-      (dragEnd)="markerDragEnd(m, $event)">
+      *ngFor="let u of unidades; let i = index"
+      (markerClick)="clickedMarker(u.label, i)"
+      [latitude]="u.latitude"
+      [longitude]="u.longitude"
+      [label]="{color:'white',fontWeight: 'bold', text: toString(u.leitos_disponiveis)}"
+      [iconUrl]="getIcon(u)"
+      (dragEnd)="markerDragEnd(u, $event)">
       
     <agm-info-window>
-      <strong>InfoWindow content</strong>
+      <strong>{{u.nome}}</strong>
     </agm-info-window>
     
   </agm-marker>
-  
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
-      [radius]="5000"
-      [fillColor]="'red'"
-      [circleDraggable]="true"
-      [editable]="true">
-  </agm-circle>
+    
+    
+  <agm-marker
+      [latitude]="lat"
+      [longitude]="lng"
+      [iconUrl]="iconUser">
+  </agm-marker>
 
 </agm-map>
