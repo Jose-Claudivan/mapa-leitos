@@ -4,6 +4,7 @@ import { AgmCoreModule } from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import { AgmDirectionModule } from 'agm-direction';
 
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
@@ -25,6 +26,7 @@ import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBmkFr8N0ka5tI0LStzPl7Pn91GN4sKZ60',
       libraries: ["places", "geometry"]

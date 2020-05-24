@@ -9,4 +9,5 @@ export class Unidade extends Resource{
        leitos_disponiveis: number;
        login: string;
        senha: string;
+       distancia: number
 }

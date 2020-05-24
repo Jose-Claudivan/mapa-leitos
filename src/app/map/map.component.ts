@@ -3,6 +3,8 @@ import { MouseEvent } from '@agm/core';
 import { QueryOptions } from '../models/query-options';
 import { UnidadeService} from '../services/unidade.service';
 import { Unidade } from '../models/unidade';
+import {} from "googlemaps"
+declare var google: any;
 
 @Component({
   selector: 'app-map',
@@ -18,15 +20,29 @@ export class MapComponent implements OnInit{
   lng: number = -35.900808;
 
   unidades: Unidade[] 
+  unidadeSelected: Unidade
   iconRed
   iconYellow
   iconGreen
   iconUser
+
+  visible
+
+  origin: any;
+  destination: any;
+  rota: boolean
+
+  btnRotaName: string
+
+  distance: Number;
   
   constructor(private unidadeService: UnidadeService) { }
 
   ngOnInit(): void {
         
+        this.btnRotaName = "Rota"
+        this.rota = false
+        this.visible = false
         this.iconUser = {
 
             path: "M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z",
@@ -62,14 +78,38 @@ export class MapComponent implements OnInit{
             strokeWeight: 0,
             scale: 1
         }
-      this.unidadeService.list(new QueryOptions).
+
+        this.origin = { 
+            lat: this.lat,
+            lng: this.lng 
+        };
+        
+        /*this.destination = { 
+            lat: -8.619084, 
+            lng: -35.950808
+        }; */
+
+        this.unidadeService.list(new QueryOptions).
                 subscribe( unidades => {
                     this.unidades = unidades
                 });
   }
 
-  clickedMarker(label: string, index: number) {
-    console.log(`clicked the marker: ${label || index}`)
+  setDestination(){
+    this.destination = { 
+            lat: this.unidadeSelected.latitude, 
+            lng: this.unidadeSelected.longitude
+        };  
+  }
+
+
+  clickedMarker(unidade: Unidade, index: number) {
+    this.changeVisible()
+    this.unidadeSelected = unidade
+    this.setDestination()
+    this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
+
+    console.log(`clicked the marker: ${unidade.nome || index}`)
   }
   
   mapClicked($event: MouseEvent) {
@@ -99,7 +139,40 @@ export class MapComponent implements OnInit{
   markerDragEnd(m: marker, $event: MouseEvent) {
     console.log('dragEnd', m, $event);
   }
+
+  tracarRota(){
+    if(this.rota){
+        this.btnRotaName = "Rota"
+    }else{
+        this.btnRotaName = "Voltar"
+    }
+    console.log("Lat: "+this.lat+" long: "+this.lng)
+    this.rota = !this.rota
+  }
+
+  chamarUber(){
+    alert("Chamando Uber")
+  }
   
+  changeVisible(){
+    this.visible = true
+  }
+
+  // calculate the distances from point1 to point2
+    calculateDistance(point1, point2) {
+        const p1 = new google.maps.LatLng(
+        point1.lat,
+        point1.lng
+        );
+        const p2 = new google.maps.LatLng(
+        point2.lat,
+        point2.lng
+        );
+        return (
+        google.maps.geometry.spherical.computeDistanceBetween(p1, p2)/1000
+        ).toFixed(2);
+    }
+
   markers: marker[] = [
 	  {
 		  lat: -8.619084,

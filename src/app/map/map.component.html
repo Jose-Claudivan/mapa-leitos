@@ -9,7 +9,7 @@
 
   <agm-marker 
       *ngFor="let u of unidades; let i = index"
-      (markerClick)="clickedMarker(u.label, i)"
+      (markerClick)="clickedMarker(u, i)"
       [latitude]="u.latitude"
       [longitude]="u.longitude"
       [label]="{color:'white',fontWeight: 'bold', text: toString(u.leitos_disponiveis)}"
@@ -17,7 +17,8 @@
       (dragEnd)="markerDragEnd(u, $event)">
       
     <agm-info-window>
-      <strong>{{u.nome}}</strong>
+        <strong>{{u.nome}}</strong><br>
+      <strong>Distancia: {{u.distancia}} km</strong>
     </agm-info-window>
     
   </agm-marker>
@@ -28,5 +29,20 @@
       [longitude]="lng"
       [iconUrl]="iconUser">
   </agm-marker>
+    
+  <agm-direction *ngIf="rota"
+        [origin]="origin" 
+        [destination]="destination"
+        >
+            
+  </agm-direction>
 
 </agm-map>
+
+<div [style.visibility]="visible ? 'visible' : 'hidden'">
+    
+  <button class="btn btn-outline-primary" (click)="tracarRota()">{{btnRotaName}}</button>
+  <button class="btn btn-outline-dark" (click)="chamarUber()">Chamar Uber</button>
+
+    
+</div>
