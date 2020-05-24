@@ -1,7 +1,40 @@
-<h2>{{unidade.nome}}</h2>
+<h2 class="text-center">{{unidade.nome}}</h2>
 
-
-<div class="panel panel-primary">
-      <div class="panel-heading">Panel with panel-primary class</div>
-      <div class="panel-body">Panel Content</div>
+<div class="card-columns" style="padding-left: 25%; padding-top: 5%; padding-bottom: 5%">
+    
+    <div class="card text-white bg-primary mb-3">
+      <div class="card-header">Leitos totais</div>
+      <div class="card-body">
+        <h5 class="card-title">{{unidade.leitos_totais}}</h5>
+      </div>
     </div>
+
+    <div class="card text-white bg-success mb-3">
+      <div class="card-header">Leitos disponiveis</div>
+      <div class="card-body">
+        <h5 class="card-title">{{unidade.leitos_disponiveis}}</h5>
+      </div>
+</div>
+    
+</div>
+
+<div class="container">
+  <form #leitosForm="ngForm">
+     <div class="form-group">
+        <div class="row">
+		<div class="col-xs-2 col-xs-offset-3 col-sm-2 col-sm-offset-3 col-md-2 col-md-offset-3">
+		<button class="btn btn-primary pull-right btnMinusColumns" (click)="minus()"><i class="fa fa-minus fa-1x">-</i></button>
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-1 text-center">
+                    <input type="text" class="form-control text-center" id="name"
+                 required
+                 [(ngModel)]="unidade.leitos_disponiveis"  name="leitos_disponiveis">
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-2">
+		<button class="btn btn-primary pull-left btnAddColumns" (click)="plus()"><i class="fa fa-plus fa-1x">+</i></button>
+		</div>								   										   		
+		</div>
+            </div>
+    </form>
+    
+</div>
