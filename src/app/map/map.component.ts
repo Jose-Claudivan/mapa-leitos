@@ -3,7 +3,7 @@ import { MouseEvent } from '@agm/core';
 import { QueryOptions } from '../models/query-options';
 import { UnidadeService} from '../services/unidade.service';
 import { Unidade } from '../models/unidade';
-import {} from "googlemaps"
+//import {} from '@types/googlemaps';
 declare var google: any;
 
 @Component({
@@ -34,7 +34,7 @@ export class MapComponent implements OnInit{
 
   btnRotaName: string
 
-  distance: Number;
+  distance: number;
   
   constructor(private unidadeService: UnidadeService) { }
 
@@ -107,7 +107,7 @@ export class MapComponent implements OnInit{
     this.changeVisible()
     this.unidadeSelected = unidade
     this.setDestination()
-    this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
+    //this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
 
     console.log(`clicked the marker: ${unidade.nome || index}`)
   }
