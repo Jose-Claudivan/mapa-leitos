@@ -12,6 +12,21 @@ declare var google: any;
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit{
+//teste localização
+  pegarLocalizacao(){
+    alert("Que comece o rastreio")
+    if('geolocation' in navigator){
+      navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position)
+      }, function(error){
+        console.log(error)
+      })
+    } else {
+      alert('Opa, navegador não permite rastreamento!')
+    }
+  }
+
+
 // google maps zoom level
   zoom: number = 9;
   
