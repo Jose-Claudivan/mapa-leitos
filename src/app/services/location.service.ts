@@ -7,7 +7,6 @@ import { Injectable } from '@angular/core';
 export class LocationService {
   
     getLocation(): Promise<any>{
-        alert('Que comece o RASTREAMENTO')
         return new Promise((resolve, reject) => {
           if('geolocation' in navigator){
             navigator.geolocation.getCurrentPosition(function(position){
@@ -19,7 +18,7 @@ export class LocationService {
               console.log(err)
             })
           } else {
-            alert('Opa, navegador não permite rastreamento!')
+            console.log('Opa, navegador não permite rastreamento!')
           }
       })
     }
