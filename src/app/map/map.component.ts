@@ -50,6 +50,11 @@ export class MapComponent implements OnInit{
         this.locationService.getLocation().then(pos =>{
           this.lat = pos.lat
           this.lng = pos.lng
+
+          this.origin = { 
+            lat: this.lat,
+            lng: this.lng 
+        };
         })
 
         this.btnRotaName = "Rota"
@@ -91,10 +96,7 @@ export class MapComponent implements OnInit{
             scale: 1
         }
         
-        this.origin = { 
-            lat: this.lat,
-            lng: this.lng 
-        };
+        
 
         this.unidadeService.list(new QueryOptions).
                 subscribe( unidades => {
@@ -116,7 +118,7 @@ export class MapComponent implements OnInit{
     this.changeVisible()
     this.unidadeSelected = unidade
     this.setDestination()
-    //this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
+    this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
 
     console.log(`clicked the marker: ${unidade.nome || index}`)
   }
@@ -168,7 +170,7 @@ export class MapComponent implements OnInit{
   }
 
   // calculate the distances from point1 to point2
-    calculateDistance(point1, point2) {
+    calculateDistance(point1, point2):string {
         const p1 = new google.maps.LatLng(
         point1.lat,
         point1.lng
