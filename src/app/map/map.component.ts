@@ -12,19 +12,53 @@ declare var google: any;
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit{
-//teste localização
   pegarLocalizacao(){
-    alert("Que comece o rastreio")
+    alert('Que comece o RASTREAMENTO')
     if('geolocation' in navigator){
       navigator.geolocation.getCurrentPosition(function(position){
         console.log(position)
+        var latReal = position.coords.latitude;
+        var lonReal = position.coords.longitude;
+        console.log("LATITUDE: " + latReal);
+        console.log("LONGITUDE: " + lonReal);
       }, function(error){
         console.log(error)
       })
     } else {
       alert('Opa, navegador não permite rastreamento!')
     }
-  }
+  };
+  /*{
+    alert("Que comece o rastreio")
+    if(navigator.geolocation){
+      navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else {
+      alert('Opa um erro ocorreu na LOCALIZAÇÃO!');
+    } 
+
+    function showPosition(position) {
+      console.log("LOCALIZAÇÃO");
+      console.log(position);
+      var latReal = position.coords.latitude;
+      var lonReal = position.coords.longitude;
+      console.log("LATITUDE: " + latReal);
+      console.log("LONGITUDE: " + lonReal);
+    }
+    /*if('geolocation' in navigator){
+      navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position)
+        var latReal = position.coords.latitude;
+        var lonReal = position.coords.longitude;
+        console.log("LATITUDE: " + latReal);
+        console.log("LONGITUDE: " + lonReal);
+      }, function(error){
+        console.log(error)
+      })
+    } else {
+      alert('Opa, navegador não permite rastreamento!')
+    }
+  }*/
 
 
 // google maps zoom level
@@ -54,7 +88,7 @@ export class MapComponent implements OnInit{
   constructor(private unidadeService: UnidadeService) { }
 
   ngOnInit(): void {
-        
+
         this.btnRotaName = "Rota"
         this.rota = false
         this.visible = false
@@ -93,7 +127,7 @@ export class MapComponent implements OnInit{
             strokeWeight: 0,
             scale: 1
         }
-
+        
         this.origin = { 
             lat: this.lat,
             lng: this.lng 
@@ -109,6 +143,8 @@ export class MapComponent implements OnInit{
                     this.unidades = unidades
                 });
   }
+
+    
 
   setDestination(){
     this.destination = { 
