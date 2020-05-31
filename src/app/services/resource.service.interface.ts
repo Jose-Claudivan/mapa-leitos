@@ -1,6 +1,6 @@
 import { Resource } from "../models/resource";
 import { Observable } from "rxjs";
-import { QueryOptions } from "../models/query-options";
+import { QueryOptions } from "./query-options";
 
 export interface ResourceServiceInterface<T extends Resource>{
 

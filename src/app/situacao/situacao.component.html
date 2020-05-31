@@ -5,14 +5,14 @@
     <div class="card text-white bg-primary mb-3">
       <div class="card-header">Leitos totais</div>
       <div class="card-body">
-        <h5 class="card-title">{{unidade.leitos_totais}}</h5>
+        <h5 class="card-title">{{unidade.leito.total}}</h5>
       </div>
     </div>
 
     <div class="card text-white bg-success mb-3">
       <div class="card-header">Leitos disponiveis</div>
       <div class="card-body">
-        <h5 class="card-title">{{unidade.leitos_disponiveis}}</h5>
+        <h5 class="card-title">{{unidade.leito.disponiveis}}</h5>
       </div>
 </div>
     
@@ -27,7 +27,7 @@
 		<div class="col-xs-3 col-sm-3 col-md-3 text-center">
                     <input type="text" class="form-control text-center" id="name"
                  required
-                 [(ngModel)]="unidade.leitos_disponiveis"  name="leitos_disponiveis">
+                 [(ngModel)]="unidade.leito.disponiveis"  name="leitos_disponiveis">
 		</div>
 		<div class="col-xs-2 col-sm-2 col-md-2">
 		<button class="btn btn-primary pull-left btnAddColumns" (click)="plus()"><i class="fa fa-plus fa-1x">+</i></button>

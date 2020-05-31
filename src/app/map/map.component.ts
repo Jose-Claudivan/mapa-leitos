@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
-import { QueryOptions } from '../models/query-options';
+import { QueryOptions } from '../services/query-options';
 import { UnidadeService} from '../services/unidade.service';
 import { Unidade } from '../models/unidade';
 //import {} from '@types/googlemaps';
@@ -101,6 +101,7 @@ export class MapComponent implements OnInit{
         this.unidadeService.list(new QueryOptions).
                 subscribe( unidades => {
                     this.unidades = unidades
+                    console.log(this.unidades)
                 });
   }
 
@@ -136,7 +137,7 @@ export class MapComponent implements OnInit{
   }
 
   getIcon(unidade){
-    let leitosDisp = unidade.leitos_disponiveis
+    let leitosDisp = unidade.leito.disponiveis
 
     if(leitosDisp<5){
         return this.iconRed

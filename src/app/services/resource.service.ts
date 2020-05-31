@@ -3,15 +3,15 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from "@angular/common/http";
 import { Resource } from "../models/resource";
 import { Serializer } from "../serializers/serializer";
-import { QueryOptions } from "../models/query-options";
+import { QueryOptions } from "./query-options";
 import { ResourceServiceInterface } from "./resource.service.interface";
 
 export class ResourceService<T extends Resource> implements ResourceServiceInterface<T>{
     constructor(
-        private httpClient: HttpClient,
-        private url: string,
-        private endpoint: string,
-        private serializer: Serializer) {}
+        protected httpClient: HttpClient,
+        protected url: string,
+        protected endpoint: string,
+        protected serializer: Serializer) {}
     
       public create(item: T): Observable<T> {
         return this.httpClient
@@ -58,6 +58,14 @@ export class ResourceService<T extends Resource> implements ResourceServiceInter
       delete(id: any) {
         return this.httpClient
           .delete(`${this.url}/${this.endpoint}/${id}`);
+      }
+
+      public updateChild(item: T, child: string,serializer: Serializer): Observable<T>{
+        return this.httpClient
+          .put<T>(`${this.url}/${this.endpoint}/${item.id}/${child}`,
+            serializer.toJson(item[child]));
+    
+            
       }
     
       private convertData(data: any): T[] {

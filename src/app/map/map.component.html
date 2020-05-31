@@ -13,7 +13,7 @@
       (markerClick)="clickedMarker(u, i)"
       [latitude]="u.latitude"
       [longitude]="u.longitude"
-      [label]="{color:'white',fontWeight: 'bold', text: toString(u.leitos_disponiveis)}"
+      [label]="{color:'white',fontWeight: 'bold', text: toString(u.leito.disponiveis)}"
       [iconUrl]="getIcon(u)"
       (dragEnd)="markerDragEnd(u, $event)">
       

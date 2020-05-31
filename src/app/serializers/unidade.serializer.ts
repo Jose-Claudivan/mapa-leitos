@@ -1,18 +1,19 @@
 import { Unidade } from "../models/unidade";
+import { Leito } from '../models/leito';
 
 
 export class UnidadeSerializer {
     fromJson(json: any): Unidade {
       let unidade = new Unidade();
+      unidade.leito = new Leito();
 
       unidade.id = json.id;
       unidade.nome = json.nome;
       unidade.latitude = json.latitude;
       unidade.longitude = json.longitude;
-      unidade.leitos_totais = json.leitos_totais;
-      unidade.leitos_disponiveis = json.leitos_disponiveis;
-      unidade.login = json.login;
-      unidade.senha = json.senha;
+      unidade.leito.total = json.leito.total;
+      unidade.leito.disponiveis = json.leito.disponiveis;
+      unidade.leito.id = json.leito.id;
 
       
       return unidade;
@@ -24,12 +25,14 @@ export class UnidadeSerializer {
             "nome" : unidade.nome,
             "latitude" : unidade.latitude,
             "longitude" : unidade.longitude,
-            "leitos_totais" : unidade.leitos_totais,
-            "leitos_disponiveis" : unidade.leitos_disponiveis,
-            "login" : unidade.login,
-            "senha" : unidade.senha
+            "leito":{
+                  "total": unidade.leito.total,
+                  "disponiveis": unidade.leito.disponiveis
+            }
       }
 
       return json
     }
+
+
   }
