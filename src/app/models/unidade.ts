@@ -9,4 +9,9 @@ export class Unidade extends Resource{
        distancia: string
 
        leito: Leito
+
+       constructor(){
+          super()
+          this.leito = new Leito()
+       }
 }

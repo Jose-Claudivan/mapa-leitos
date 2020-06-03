@@ -4,11 +4,13 @@ import { MapComponent } from './map/map.component';
 import { AppComponent } from './app.component';
 import { SituacaoComponent } from './situacao/situacao.component';
 import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
+import { UnidadeCreateComponent } from './unidade-create/unidade-create.component';
 
 
 const routes: Routes = [
   { path: '',  component: MapComponent },
   { path: 'unidades',  component: UnidadeAdmComponent },
+  { path: 'unidade-create',  component: UnidadeCreateComponent },
   { path: 'situacao',  component: SituacaoComponent },
 ];
 

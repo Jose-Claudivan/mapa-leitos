@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
 import { SituacaoComponent } from './situacao/situacao.component';
 import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
+import { UnidadeCreateComponent } from './unidade-create/unidade-create.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -19,7 +20,8 @@ import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
     AppComponent,
     MapComponent,
     SituacaoComponent,
-    UnidadeAdmComponent
+    UnidadeAdmComponent,
+    UnidadeCreateComponent
   ],
   imports: [
     BrowserModule,
