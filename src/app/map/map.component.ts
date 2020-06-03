@@ -109,8 +109,8 @@ export class MapComponent implements OnInit{
 
   setDestination(){
     this.destination = { 
-            lat: this.unidadeSelected.latitude, 
-            lng: this.unidadeSelected.longitude
+            lat: +this.unidadeSelected.latitude, 
+            lng: +this.unidadeSelected.longitude
         };  
   }
 
