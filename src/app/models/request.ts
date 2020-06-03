@@ -1,4 +1,3 @@
-//export const REQUEST_BASE_URL = 'http://localhost:3000'
-export const REQUEST_BASE_URL = 'https://my-json-server.typicode.com/juniorpires/hackingrio-data'
 
-
+//export const REQUEST_BASE_URL = 'http://localhost:8080'
+export const REQUEST_BASE_URL = 'https://clickleito.herokuapp.com'

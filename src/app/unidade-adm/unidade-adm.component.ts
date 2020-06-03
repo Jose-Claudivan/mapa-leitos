@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QueryOptions } from '../models/query-options';
+import { QueryOptions } from '../services/query-options';
 import { UnidadeService} from '../services/unidade.service';
 import { Unidade } from '../models/unidade';
 
@@ -21,6 +21,7 @@ export class UnidadeAdmComponent implements OnInit {
       this.unidadeService.list(new QueryOptions).
                 subscribe( unidades => {
                     this.unidades = unidades
+                    console.log(unidades)
                 });
   }
 

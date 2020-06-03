@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
-import { QueryOptions } from '../models/query-options';
+import { QueryOptions } from '../services/query-options';
 import { UnidadeService} from '../services/unidade.service';
 import { Unidade } from '../models/unidade';
 //import {} from '@types/googlemaps';
+import { map } from 'rxjs/operators';
+import { LocationService } from '../services/location.service';
 declare var google: any;
 
 @Component({
@@ -12,12 +14,16 @@ declare var google: any;
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit{
-// google maps zoom level
+  
+  // google maps zoom level
   zoom: number = 9;
   
   // initial center position for the map
-  lat: number = -8.619084;
-  lng: number = -35.900808;
+  //lat: number = -8.619084;
+  //lng: number = -35.900808;
+
+  lat: number
+  lng: number
 
   unidades: Unidade[] 
   unidadeSelected: Unidade
@@ -36,10 +42,21 @@ export class MapComponent implements OnInit{
 
   distance: number;
   
-  constructor(private unidadeService: UnidadeService) { }
+  constructor(private unidadeService: UnidadeService, private locationService: LocationService) { }
 
   ngOnInit(): void {
-        
+
+
+        this.locationService.getLocation().then(pos =>{
+          this.lat = pos.lat
+          this.lng = pos.lng
+
+          this.origin = { 
+            lat: this.lat,
+            lng: this.lng 
+        };
+        })
+
         this.btnRotaName = "Rota"
         this.rota = false
         this.visible = false
@@ -78,22 +95,17 @@ export class MapComponent implements OnInit{
             strokeWeight: 0,
             scale: 1
         }
-
-        this.origin = { 
-            lat: this.lat,
-            lng: this.lng 
-        };
         
-        /*this.destination = { 
-            lat: -8.619084, 
-            lng: -35.950808
-        }; */
+        
 
         this.unidadeService.list(new QueryOptions).
                 subscribe( unidades => {
                     this.unidades = unidades
+                    console.log(this.unidades)
                 });
   }
+
+    
 
   setDestination(){
     this.destination = { 
@@ -107,7 +119,7 @@ export class MapComponent implements OnInit{
     this.changeVisible()
     this.unidadeSelected = unidade
     this.setDestination()
-    //this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
+    this.unidadeSelected.distancia = this.calculateDistance(this.origin, this.destination)
 
     console.log(`clicked the marker: ${unidade.nome || index}`)
   }
@@ -125,7 +137,7 @@ export class MapComponent implements OnInit{
   }
 
   getIcon(unidade){
-    let leitosDisp = unidade.leitos_disponiveis
+    let leitosDisp = unidade.leito.disponiveis
 
     if(leitosDisp<5){
         return this.iconRed
@@ -159,7 +171,7 @@ export class MapComponent implements OnInit{
   }
 
   // calculate the distances from point1 to point2
-    calculateDistance(point1, point2) {
+    calculateDistance(point1, point2):string {
         const p1 = new google.maps.LatLng(
         point1.lat,
         point1.lng
@@ -172,6 +184,7 @@ export class MapComponent implements OnInit{
         google.maps.geometry.spherical.computeDistanceBetween(p1, p2)/1000
         ).toFixed(2);
     }
+
 
   markers: marker[] = [
 	  {
@@ -195,6 +208,8 @@ export class MapComponent implements OnInit{
   ]
  
 }
+
+
 
 // just an interface for type safety.
 interface marker {

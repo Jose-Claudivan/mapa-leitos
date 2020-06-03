@@ -1,7 +1,9 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import { UnidadeService} from '../services/unidade.service';
 import { Unidade } from '../models/unidade';
-import { QueryOptions } from '../models/query-options';
+import { QueryOptions } from '../services/query-options';
+import { LeitoService } from "../services/leito.service";
+import { LeitoSerializer } from '../serializers/leito.serializer';
 
 
 @Component({
@@ -11,31 +13,31 @@ import { QueryOptions } from '../models/query-options';
 })
 export class SituacaoComponent implements OnInit{
 
-  constructor(private unidadeService: UnidadeService) { }
+  constructor(private unidadeService: UnidadeService, private leitoService: LeitoService) { }
 
   unidade: Unidade 
   
   ngOnInit(): void {
-      this.unidadeService.read(3).
+      this.unidadeService.read(1).
               subscribe( unidade => {
                     this.unidade = unidade
                 });
   }
 
 changeModel(){
-    this.unidadeService.update(this.unidade).subscribe(
+    this.unidadeService.updateChild(this.unidade,'leito', new LeitoSerializer()).subscribe(
 				result => {
 					console.log(result);
                 });
 }
 
 minus(){
-    this.unidade.leitos_disponiveis-=1
+    this.unidade.leito.disponiveis-=1
     this.changeModel()
 }
 
 plus(){
-    this.unidade.leitos_disponiveis+=1
+    this.unidade.leito.disponiveis+=1
     this.changeModel()
 }
 
