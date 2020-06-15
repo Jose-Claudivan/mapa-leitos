@@ -11,8 +11,12 @@ import { MapComponent } from './map/map.component';
 import { SituacaoComponent } from './situacao/situacao.component';
 import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
 import { UnidadeCreateComponent } from './unidade-create/unidade-create.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 @NgModule({
@@ -21,18 +25,22 @@ import { UnidadeCreateComponent } from './unidade-create/unidade-create.componen
     MapComponent,
     SituacaoComponent,
     UnidadeAdmComponent,
-    UnidadeCreateComponent
+    UnidadeCreateComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MatToolbarModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBmkFr8N0ka5tI0LStzPl7Pn91GN4sKZ60',
       libraries: ["places", "geometry"]
     }),
+    BrowserAnimationsModule,
     //NgbModule.forRoot()
     
   ],
