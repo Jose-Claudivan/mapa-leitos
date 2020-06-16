@@ -14,9 +14,13 @@ import { UnidadeCreateComponent } from './unidade-create/unidade-create.componen
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UnidadeLoginComponent } from './unidade-login/unidade-login.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -27,7 +31,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     UnidadeAdmComponent,
     UnidadeCreateComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UnidadeLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +40,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HttpClientModule,
     FormsModule,
     MatToolbarModule,
+    MatCardModule,
+    MatInputModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBmkFr8N0ka5tI0LStzPl7Pn91GN4sKZ60',
