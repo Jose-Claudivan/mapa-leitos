@@ -15,11 +15,18 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UnidadeLoginComponent } from './unidade-login/unidade-login.component';
+import { LoginCreateComponent } from './login-create/login-create.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -32,7 +39,8 @@ import { MatInputModule } from '@angular/material/input';
     UnidadeCreateComponent,
     HeaderComponent,
     FooterComponent,
-    UnidadeLoginComponent
+    UnidadeLoginComponent,
+    LoginCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +49,13 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatToolbarModule,
     MatCardModule,
+    MatFormFieldModule,
     MatInputModule,
+    MatButtonModule,
+    MatTableModule,
+    MatMenuModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBmkFr8N0ka5tI0LStzPl7Pn91GN4sKZ60',
