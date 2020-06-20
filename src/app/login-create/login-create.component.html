@@ -1,6 +1,31 @@
-<button mat-raised-button (click)= "createLogin()" color="primary">
-    Salvar
-</button>
-<button mat-raised-button (click)= "cancelLogin()">
-    Cancelar
-</button>
+<mat-card>
+    <mat-card-title>
+        Novo Usuario
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="login.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [(ngModel)]="login.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="E-mail" [(ngModel)]="login.email" name="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Login" [(ngModel)]="login.login" name="login">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [(ngModel)]="login.senha" name="senha">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Confirmar Senha">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)= "createLogin()" color="primary">
+        Salvar
+    </button>
+    <button mat-raised-button (click)= "cancelLogin()">
+        Cancelar
+    </button>
+</mat-card>

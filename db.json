@@ -36,6 +36,24 @@
       "login": "admin",
       "senha": "admin",
       "id": 4
+    },
+    {
+      "login": "FrontEnd",
+      "senha": "12345",
+      "id": 5
+    },
+    {
+      "login": "ABC",
+      "senha": "098",
+      "id": 6
+    },
+    {
+      "nome": "Teste Cadastro Front",
+      "cpf": "0101010101",
+      "email": "testefornt@yahoo.com",
+      "login": "testeFront",
+      "senha": "0123",
+      "id": 7
     }
   ]
 }

@@ -11,8 +11,11 @@ import { Login } from '../models/login';
 export class LoginCreateComponent implements OnInit {
 
   login: Login = {
-    login: 'admin',
-    senha: 'admin'
+    nome: '',
+    cpf: null,
+    email: '',
+    login: '',
+    senha: ''
   }
 
   constructor(private loginService: LoginServiceService,
