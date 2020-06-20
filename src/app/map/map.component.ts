@@ -16,7 +16,7 @@ declare var google: any;
 export class MapComponent implements OnInit{
   
   // google maps zoom level
-  zoom: number = 9;
+  zoom: number = 15;
   
   // initial center position for the map
   //lat: number = -8.619084;
@@ -109,8 +109,8 @@ export class MapComponent implements OnInit{
 
   setDestination(){
     this.destination = { 
-            lat: this.unidadeSelected.latitude, 
-            lng: this.unidadeSelected.longitude
+            lat: +this.unidadeSelected.latitude, 
+            lng: +this.unidadeSelected.longitude
         };  
   }
 

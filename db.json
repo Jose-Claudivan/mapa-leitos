@@ -31,6 +31,11 @@
       "leitos_disponiveis": 9,
       "login": "rendeiras",
       "senha": "1234567"
+    },
+    {
+      "login": "admin",
+      "senha": "admin",
+      "id": 4
     }
   ]
 }

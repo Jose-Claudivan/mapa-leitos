@@ -1,0 +1,59 @@
+<section class="content-header">
+    <h1>
+      <small>Cadastrar unidade</small>
+    </h1>
+  </section>
+
+<section class="content">
+
+
+      <form id="form1" #f="ngForm"
+        (ngSubmit)="onSubmit()" class="form1" method="post">
+
+
+        <div class="form-row">
+
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nome</label>
+            <input type="text" [(ngModel)]="unidade.nome" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
+          </div>
+          <div class="form-group col-md-6">
+             <label for="inputEmail4">CNPJ</label>
+             <input type="text" [(ngModel)]="unidade.cnpj" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
+          </div>
+          
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Latitude</label>
+              <input type="text" [(ngModel)]="unidade.latitude" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
+            </div>
+            <div class="form-group col-md-6">
+               <label for="inputEmail4">Longitude</label>
+               <input type="text" [(ngModel)]="unidade.longitude" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
+            </div>
+            
+        </div>
+
+        <div class="form-row">
+
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Quantidade total de leitos</label>
+              <input type="text" [(ngModel)]="unidade.leito.total" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
+            </div>
+            <div class="form-group col-md-6">
+               <label for="inputEmail4">Quantidade de leitos disponíveis</label>
+               <input type="text" [(ngModel)]="unidade.leito.disponiveis" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
+            </div>
+            
+        </div>
+
+        
+
+        <button type="submit"  class="btn btn-lg btn-primary fa fa-save" align="right">
+            <b style="margin-left: 10px"> Salvar</b>
+          </button>
+      </form>
+</section>
