@@ -9,7 +9,7 @@
       "leitos_disponiveis": 9,
       "login": "boa vista",
       "senha": "1234567",
-      "email": "boavista@upa.com"
+      "email": "boavista@upa"
     },
     {
       "nome": "Teste Cadastro Front",
@@ -18,14 +18,6 @@
       "login": "testeFront",
       "senha": "0123",
       "id": 7
-    },
-    {
-      "nome": "Xubaka",
-      "cpf": "000000000000000",
-      "email": "xubaka@orkut.com",
-      "login": "Xubakon",
-      "senha": "starWars",
-      "id": 8
     }
   ]
 }

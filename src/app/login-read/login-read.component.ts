@@ -17,7 +17,6 @@ export class LoginReadComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.read().subscribe(logins => {
       this.logins = logins;
-      console.log(logins);
     })
   }
 }

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class LoginServiceService {
 
-  testeUrl = "http://localhost:3000/unidade";
+  testeUrl = "https://clickleito.herokuapp.com/usuario";
   constructor(private snackBar: MatSnackBar,
     private http: HttpClient) { }
 
@@ -21,6 +21,7 @@ export class LoginServiceService {
     });
   }
   create(login: Login): Observable<Login> {
+    console.log(login);
     return this.http.post<Login>(this.testeUrl, login)
   }
 
