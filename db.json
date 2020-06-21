@@ -18,8 +18,9 @@
       "longitude": -35.750808,
       "leitos_totais": 30,
       "leitos_disponiveis": 9,
-      "login": "rendeiras",
-      "senha": "1234567"
+      "login": "boa vista",
+      "senha": "1234567",
+      "email": "boavista@upa.com"
     },
     {
       "nome": "Teste Cadastro Front",

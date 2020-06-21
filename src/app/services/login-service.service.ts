@@ -27,4 +27,14 @@ export class LoginServiceService {
   read(): Observable<Login[]> {
     return this.http.get<Login[]>(this.testeUrl);
   }
+
+  readById(id: string): Observable<Login> {
+    const url = `${this.testeUrl}/${id}`
+    return this.http.get<Login>(url)
+  }
+
+  update(login: Login): Observable<Login> {
+    const url = `${this.testeUrl}/${login.id}`
+    return this.http.put<Login>(url, login)
+  }
 }
