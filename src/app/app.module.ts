@@ -32,6 +32,7 @@ import { ModeloTabelaComponent } from './modelo-tabela/modelo-tabela.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { LoginUpdateComponent } from './login-update/login-update.component';
+import { LoginDeleteComponent } from './login-delete/login-delete.component';
 
 
 
@@ -48,7 +49,8 @@ import { LoginUpdateComponent } from './login-update/login-update.component';
     LoginCreateComponent,
     LoginReadComponent,
     ModeloTabelaComponent,
-    LoginUpdateComponent
+    LoginUpdateComponent,
+    LoginDeleteComponent
   ],
   imports: [
     BrowserModule,

@@ -28,7 +28,7 @@ export class LoginServiceService {
     return this.http.get<Login[]>(this.testeUrl);
   }
 
-  readById(id: string): Observable<Login> {
+  readById(id: number): Observable<Login> {
     const url = `${this.testeUrl}/${id}`
     return this.http.get<Login>(url)
   }
@@ -36,5 +36,10 @@ export class LoginServiceService {
   update(login: Login): Observable<Login> {
     const url = `${this.testeUrl}/${login.id}`
     return this.http.put<Login>(url, login)
+  }
+
+  delete(id: number): Observable<Login> {
+    const url = `${this.testeUrl}/${id}`
+    return this.http.delete<Login>(url);
   }
 }

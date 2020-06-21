@@ -8,6 +8,7 @@ import { UnidadeCreateComponent } from './unidade-create/unidade-create.componen
 import { UnidadeLoginComponent } from './unidade-login/unidade-login.component';
 import { LoginCreateComponent } from './login-create/login-create.component';
 import { LoginUpdateComponent } from './login-update/login-update.component';
+import { LoginDeleteComponent } from './login-delete/login-delete.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'situacao',  component: SituacaoComponent },
   { path: 'unidade-login',  component: UnidadeLoginComponent },
   { path: 'login-create',  component: LoginCreateComponent },
-  { path: 'login-update/:id',  component: LoginUpdateComponent }
+  { path: 'login-update/:id',  component: LoginUpdateComponent },
+  { path: 'login-delete/:id',  component: LoginDeleteComponent }
 
 ];
 

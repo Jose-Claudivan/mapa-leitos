@@ -28,6 +28,7 @@ export class LoginCreateComponent implements OnInit {
   createLogin(): void {
     this.loginService.create(this.login).subscribe(() => {
       this.loginService.showMsg('Cadastro realizado com sucesso!');
+      this.router.navigate(['/unidade-create']);
     }) 
   }
 

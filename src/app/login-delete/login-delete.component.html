@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>
+        Excluir Usuario
+    </mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome" [value]="login.nome" name="nome" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" [value]="login.cpf" name="cpf" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="E-mail" [value]="login.email" name="email" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Login" [value]="login.login" name="login" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Senha" [value]="login.senha" name="senha" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Confirmar Senha">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)= "deleteLogin()" color="warn">
+        Deletar
+    </button>
+    <button mat-raised-button (click)= "cancelDelete()">
+        Cancelar
+    </button>
+</mat-card>
