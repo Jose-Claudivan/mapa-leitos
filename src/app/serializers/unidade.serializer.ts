@@ -11,9 +11,9 @@ export class UnidadeSerializer {
       unidade.nome = json.nome;
       unidade.latitude = json.latitude;
       unidade.longitude = json.longitude;
-      unidade.leito.total = json.leito.total;
-      unidade.leito.disponiveis = json.leito.disponiveis;
-      unidade.leito.id = json.leito.id;
+      //unidade.leito.total = json.leito.total;
+     // unidade.leito.disponiveis = json.leito.disponiveis;
+      //unidade.leito.id = json.leito.id;
 
       
       return unidade;
@@ -25,10 +25,10 @@ export class UnidadeSerializer {
             "nome" : unidade.nome,
             "latitude" : unidade.latitude,
             "longitude" : unidade.longitude,
-            "leito":{
+            /*"leito":{
                   "total": unidade.leito.total,
                   "disponiveis": unidade.leito.disponiveis
-            }
+            }*/
       }
 
       return json

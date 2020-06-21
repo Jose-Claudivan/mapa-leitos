@@ -20,7 +20,7 @@ export class UnidadeCreateComponent implements OnInit {
 
   onSubmit(){
     console.log(this.unidade)
-
+    this.unidade.leito = null
     this.unidadeService.create(this.unidade).
                 subscribe( unidade =>{
                         console.log(unidade)
