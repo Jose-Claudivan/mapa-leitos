@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Unidade } from '../models/unidade';
 import { UnidadeService } from '../services/unidade.service';
+import { UiService } from '../services/ui.service';
+
 
 @Component({
   selector: 'app-unidade-create',
@@ -12,7 +14,7 @@ export class UnidadeCreateComponent implements OnInit {
   unidade: Unidade
 
 
-  constructor(private unidadeService: UnidadeService) { }
+  constructor(private uiService: UiService, private unidadeService: UnidadeService) { }
 
   ngOnInit(): void {
     this.unidade = new Unidade()
@@ -22,9 +24,16 @@ export class UnidadeCreateComponent implements OnInit {
     console.log(this.unidade)
 
     this.unidadeService.create(this.unidade).
-                subscribe( unidade =>{
-                        console.log(unidade)
+                subscribe( () =>{
+                        this.uiService.showMsg("Unidade Cadastrada")
+                        this.clearFields()
                 })
+  }
+
+  
+
+  clearFields(){
+    this.unidade = new Unidade()
   }
 
 }
