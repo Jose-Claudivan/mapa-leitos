@@ -27,6 +27,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoginReadComponent } from './login-read/login-read.component';
+import { ModeloTabelaComponent } from './modelo-tabela/modelo-tabela.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -40,7 +44,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     HeaderComponent,
     FooterComponent,
     UnidadeLoginComponent,
-    LoginCreateComponent
+    LoginCreateComponent,
+    LoginReadComponent,
+    ModeloTabelaComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +68,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
       libraries: ["places", "geometry"]
     }),
     BrowserAnimationsModule,
+    MatPaginatorModule,
+    MatSortModule,
     //NgbModule.forRoot()
     
   ],

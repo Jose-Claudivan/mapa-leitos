@@ -23,4 +23,8 @@ export class LoginServiceService {
   create(login: Login): Observable<Login> {
     return this.http.post<Login>(this.testeUrl, login)
   }
+
+  read(): Observable<Login[]> {
+    return this.http.get<Login[]>(this.testeUrl);
+  }
 }

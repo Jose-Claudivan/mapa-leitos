@@ -1,17 +1,6 @@
 {
   "unidade": [
     {
-      "id": 1,
-      "cnpj": 1234567890,
-      "nome": "UPA VASSOURAL",
-      "latitude": -8.619084,
-      "longitude": -35.970808,
-      "leitos_totais": 30,
-      "leitos_disponiveis": 20,
-      "login": "rendeiras",
-      "senha": "1234567"
-    },
-    {
       "id": 2,
       "cnpj": 1234567890,
       "nome": "UPA RENDEIRAS",
@@ -33,27 +22,20 @@
       "senha": "1234567"
     },
     {
-      "login": "admin",
-      "senha": "admin",
-      "id": 4
-    },
-    {
-      "login": "FrontEnd",
-      "senha": "12345",
-      "id": 5
-    },
-    {
-      "login": "ABC",
-      "senha": "098",
-      "id": 6
-    },
-    {
       "nome": "Teste Cadastro Front",
       "cpf": "0101010101",
       "email": "testefornt@yahoo.com",
       "login": "testeFront",
       "senha": "0123",
       "id": 7
+    },
+    {
+      "nome": "Xubaka",
+      "cpf": "000000000000000",
+      "email": "xubaka@orkut.com",
+      "login": "Xubakon",
+      "senha": "starWars",
+      "id": 8
     }
   ]
 }
