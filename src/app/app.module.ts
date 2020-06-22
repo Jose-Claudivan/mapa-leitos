@@ -35,7 +35,6 @@ import { LoginUpdateComponent } from './login-update/login-update.component';
 import { LoginDeleteComponent } from './login-delete/login-delete.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
