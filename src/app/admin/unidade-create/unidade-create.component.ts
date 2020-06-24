@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Unidade } from '../models/unidade';
-import { UnidadeService } from '../services/unidade.service';
-import { UiService } from '../services/ui.service';
+import { Unidade } from '../../models/unidade';
+import { UnidadeService } from '../../services/unidade.service';
+import { UiService } from '../../services/ui.service';
 
 
 @Component({

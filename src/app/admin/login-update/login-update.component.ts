@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginServiceService } from '../services/login-service.service';
+import { LoginServiceService } from '../../services/login-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Login } from '../models/login';
+import { Login } from '../../models/login';
 
 @Component({
   selector: 'app-login-update',

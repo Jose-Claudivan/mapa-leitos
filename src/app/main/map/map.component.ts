@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MouseEvent } from '@agm/core';
-import { QueryOptions } from '../services/query-options';
-import { UnidadeService} from '../services/unidade.service';
-import { Unidade } from '../models/unidade';
+import { QueryOptions } from '../../services/query-options';
+import { UnidadeService} from '../../services/unidade.service';
+import { Unidade } from '../../models/unidade';
 //import {} from '@types/googlemaps';
 import { map } from 'rxjs/operators';
-import { LocationService } from '../services/location.service';
+import { LocationService } from '../../services/location.service';
 declare var google: any;
 
 @Component({

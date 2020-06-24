@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { QueryOptions } from '../services/query-options';
-import { UnidadeService} from '../services/unidade.service';
-import { Unidade } from '../models/unidade';
+import { QueryOptions } from '../../services/query-options';
+import { UnidadeService} from '../../services/unidade.service';
+import { Unidade } from '../../models/unidade';
 
 @Component({
   selector: 'app-unidade-adm',

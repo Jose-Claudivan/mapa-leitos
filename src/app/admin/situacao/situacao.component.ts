@@ -1,9 +1,9 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { UnidadeService} from '../services/unidade.service';
-import { Unidade } from '../models/unidade';
-import { QueryOptions } from '../services/query-options';
-import { LeitoService } from "../services/leito.service";
-import { LeitoSerializer } from '../serializers/leito.serializer';
+import { UnidadeService} from '../../services/unidade.service';
+import { Unidade } from '../../models/unidade';
+import { QueryOptions } from '../../services/query-options';
+import { LeitoService } from "../../services/leito.service";
+import { LeitoSerializer } from '../../serializers/leito.serializer';
 
 
 @Component({
