@@ -12,7 +12,7 @@ export class UnidadeLoginComponent implements OnInit {
 
   username: string;
   password: string;
-
+  
   ngOnInit(): void {
   }
 
@@ -24,5 +24,5 @@ export class UnidadeLoginComponent implements OnInit {
       alert("LOGIN FALHOU!");
     }
   }
-
+  
 }

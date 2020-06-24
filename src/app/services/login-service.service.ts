@@ -12,7 +12,7 @@ export class LoginServiceService {
   testeUrl = "https://clickleito.herokuapp.com/usuario";
   constructor(private snackBar: MatSnackBar,
     private http: HttpClient) { }
-
+    
   showMsg(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
