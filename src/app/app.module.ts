@@ -7,15 +7,15 @@ import { FormsModule }   from '@angular/forms';
 import { AgmDirectionModule } from 'agm-direction';
 
 import { AppComponent } from './app.component';
-import { MapComponent } from './map/map.component';
-import { SituacaoComponent } from './situacao/situacao.component';
-import { UnidadeAdmComponent } from './unidade-adm/unidade-adm.component';
-import { UnidadeCreateComponent } from './unidade-create/unidade-create.component';
+import { MapComponent } from './main/map/map.component';
+import { SituacaoComponent } from './admin/situacao/situacao.component';
+import { UnidadeAdmComponent } from './admin/unidade-adm/unidade-adm.component';
+import { UnidadeCreateComponent } from './admin/unidade-create/unidade-create.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { UnidadeLoginComponent } from './unidade-login/unidade-login.component';
-import { LoginCreateComponent } from './login-create/login-create.component';
+import { UnidadeLoginComponent } from './admin/unidade-login/unidade-login.component';
+import { LoginCreateComponent } from './admin/login-create/login-create.component';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -28,12 +28,16 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { LoginReadComponent } from './login-read/login-read.component';
+import { LoginReadComponent } from './admin/login-read/login-read.component';
 import { ModeloTabelaComponent } from './modelo-tabela/modelo-tabela.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { LoginUpdateComponent } from './login-update/login-update.component';
-import { LoginDeleteComponent } from './login-delete/login-delete.component';
+import { LoginUpdateComponent } from './admin/login-update/login-update.component';
+import { LoginDeleteComponent } from './admin/login-delete/login-delete.component';
+import { AdminComponent } from './admin/admin.component';
+import { MainComponent } from './main/main.component';
+import { MainRoutingModule } from './main/main.routing.module';
+import { AdminRoutingModule } from './admin/admin.routing.module';
 
 
 @NgModule({
@@ -50,11 +54,18 @@ import { LoginDeleteComponent } from './login-delete/login-delete.component';
     LoginReadComponent,
     ModeloTabelaComponent,
     LoginUpdateComponent,
-    LoginDeleteComponent
+    LoginDeleteComponent,
+    AdminComponent,
+    MainComponent
   ],
+  exports:[
+    HeaderComponent,
+    FooterComponent,],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    AdminRoutingModule,
+    MainRoutingModule,
     HttpClientModule,
     FormsModule,
     MatToolbarModule,
