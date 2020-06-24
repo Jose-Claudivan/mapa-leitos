@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "^2.0.0-alpha.0",
     "@ng-bootstrap/schematics": "^2.0.0-alpha.1",
     "@types/googlemaps": "^3.39.6",
+    "admin-lte": "^3.0.5",
     "agm-direction": "^0.7.9",
     "bootstrap": "^4.0.0",
     "googlemaps": "^1.12.0",
