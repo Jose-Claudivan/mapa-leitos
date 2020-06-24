@@ -17,3 +17,9 @@
 .header .title-group {
     padding-left: 25px;
 }
+
+.botaoMenu {
+    display: flex;
+    align-items: center;
+    margin-left: 950px;
+}
