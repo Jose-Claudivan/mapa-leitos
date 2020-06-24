@@ -25,6 +25,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon'
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginReadComponent } from './login-read/login-read.component';
@@ -65,6 +66,7 @@ import { LoginDeleteComponent } from './login-delete/login-delete.component';
     MatMenuModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatIconModule,
     AgmDirectionModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBmkFr8N0ka5tI0LStzPl7Pn91GN4sKZ60',
