@@ -38,6 +38,7 @@ import { AdminComponent } from './admin/admin.component';
 import { MainComponent } from './main/main.component';
 import { MainRoutingModule } from './main/main.routing.module';
 import { AdminRoutingModule } from './admin/admin.routing.module';
+import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { AdminRoutingModule } from './admin/admin.routing.module';
     LoginUpdateComponent,
     LoginDeleteComponent,
     AdminComponent,
-    MainComponent
+    MainComponent,
+    AutenticacaoComponent
   ],
   exports:[
     HeaderComponent,

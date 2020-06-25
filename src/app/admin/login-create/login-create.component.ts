@@ -28,8 +28,6 @@ export class LoginCreateComponent implements OnInit {
         total:0,
         disponiveis:0
       }
-
-
     }
   }
 
@@ -38,6 +36,9 @@ export class LoginCreateComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+  onSubmit() {
+
   }
 
   createLogin(): void {

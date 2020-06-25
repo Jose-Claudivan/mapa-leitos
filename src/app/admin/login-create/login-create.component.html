@@ -2,31 +2,34 @@
     <mat-card-title>
         Novo Usuario
     </mat-card-title>
-    <form>
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
         <mat-form-field>
-            <input matInput placeholder="Unidade" [(ngModel)]="login.unidade.id" name="unidade">
+            <input matInput placeholder="Unidade" [(ngModel)]="login.unidade.id" name="unidade" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Nome" [(ngModel)]="login.nome" name="nome">
+            <input matInput placeholder="Nome" [(ngModel)]="login.nome" name="nome" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="CPF" [(ngModel)]="login.cpf" name="cpf">
+            <input matInput placeholder="CPF" [(ngModel)]="login.cpf" name="cpf" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="E-mail" [(ngModel)]="login.email" name="email">
+            <input matInput placeholder="E-mail" [(ngModel)]="login.email" name="email" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Login" [(ngModel)]="login.login" name="login">
+            <input matInput placeholder="Login" [(ngModel)]="login.login" name="login" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Senha" [(ngModel)]="login.senha" name="senha">
+            <input matInput placeholder="Senha" [(ngModel)]="login.senha" name="senha" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Confirmar Senha">
+            <input matInput placeholder="Confirmar Senha" required>
         </mat-form-field>
     </form>
-    <button mat-raised-button (click)= "createLogin()" color="primary">
+   <!-- <button mat-raised-button (click)= "createLogin()" color="primary">
         Salvar
+    </button>-->
+    <button mat-raised-button color="primary" [disabled]="form.form.invalid">
+        Criar minha conta
     </button>
     <button mat-raised-button (click)= "cancelLogin()">
         Cancelar

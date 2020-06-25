@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginServiceService } from 'src/app/services/login-service.service';
 
 @Component({
   selector: 'app-unidade-login',
@@ -8,21 +9,37 @@ import { Router } from '@angular/router';
 })
 export class UnidadeLoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  login = {
+    email: '',
+    password: ''
+  }
 
-  username: string;
-  password: string;
-  
+  constructor(
+    private loginService: LoginServiceService,
+    private router: Router) { }
+
   ngOnInit(): void {
   }
 
-  login() : void {
+  async onSubmit() {
+    try {
+      const result = await this.loginService.login(this.login);
+      console.log(`login realizado: ${result}`);
+
+      //navega para a rota vazia novamente
+      this.router.navigate(['']);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  /*login() : void {
     if(this.username == 'admin' && this.password == 'admin') {
       //alert("LOGIN REALIZADO COM SUCESSO!");
       this.router.navigate(["situacao"]);
     } else {
       alert("LOGIN FALHOU!");
     }
-  }
+  }*/
   
 }
