@@ -16,7 +16,7 @@ import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
 
   {path:'', component: MainComponent},
-  {path:'admin',component: AdminComponent}
+  //{path:'admin',component: AdminComponent}
   /*{ path: '',  component: MapComponent },
   { path: 'unidades',  component: UnidadeAdmComponent },
   { path: 'unidade-create',  component: UnidadeCreateComponent },

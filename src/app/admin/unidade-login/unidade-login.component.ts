@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginServiceService } from 'src/app/services/login-service.service';
+import { AccountService } from 'src/app/account/shared/account.service';
 
 @Component({
   selector: 'app-unidade-login',
@@ -15,7 +15,7 @@ export class UnidadeLoginComponent implements OnInit {
   }
 
   constructor(
-    private loginService: LoginServiceService,
+    private accountService: AccountService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -23,11 +23,11 @@ export class UnidadeLoginComponent implements OnInit {
 
   async onSubmit() {
     try {
-      const result = await this.loginService.login(this.login);
+      const result = await this.accountService.login(this.login);
       console.log(`login realizado: ${result}`);
 
       //navega para a rota vazia novamente
-      this.router.navigate(['']);
+      this.router.navigate(['admin']);
     } catch (error) {
       console.error(error);
     }

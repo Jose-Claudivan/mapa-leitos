@@ -13,19 +13,6 @@ export class LoginServiceService {
   constructor(private snackBar: MatSnackBar,
     private http: HttpClient) { }
 
-  login(user: any) {
-    return new Promise((resolve) => {
-      window.localStorage.setItem('token', 'meu-token');
-      resolve(true);
-    });
-  }
-
-  createAccount(account: any) {
-    return new Promise((resolve) => {
-      resolve(true);
-    });
-  }
-
   showMsg(msg: string): void {
     this.snackBar.open(msg, 'X', {
       duration: 3000,

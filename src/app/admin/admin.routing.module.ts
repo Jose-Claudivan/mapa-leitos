@@ -11,27 +11,29 @@ import { LoginUpdateComponent } from './login-update/login-update.component';
 import { LoginDeleteComponent } from './login-delete/login-delete.component';
 import { AutenticacaoComponent } from '../autenticacao/autenticacao.component';
 import { AuthGuard } from '../account/shared/auth.guard';
+import { MainComponent } from '../main/main.component';
 
 
 const routes: Routes = [
-
   {
     path: 'admin', component: AdminComponent, children: [
+      //{ path: 'admin' , component: AdminComponent },
       { path: 'unidade-create', component: UnidadeCreateComponent },
+      { path: 'login-update/:id', component: LoginUpdateComponent },
+      { path: 'login-delete/:id', component: LoginDeleteComponent },
+      { path: 'situacao', component: SituacaoComponent },
+      { path: 'unidades', component: UnidadeAdmComponent }
       //{ path: 'situacao', component: SituacaoComponent }
     ],
     canActivate: [AuthGuard]
   },
   //oque estiver dentro desse bloco, sera protegido
   {
-    path: '', component: AutenticacaoComponent, children: [
-      { path: '', redirectTo: 'unidade-login', pathMatch: 'full' },
+    path: 'admin', component: AutenticacaoComponent, children: [
+      { path: 'admin', redirectTo: 'unidade-login', pathMatch: 'full' },
       { path: 'unidade-login', component: UnidadeLoginComponent },
-      { path: 'login-create', component: LoginCreateComponent },
-      { path: 'login-update/:id', component: LoginUpdateComponent },
-      { path: 'login-delete/:id', component: LoginDeleteComponent },
-      { path: 'situacao', component: SituacaoComponent },
-      { path: 'unidades', component: UnidadeAdmComponent }
+      { path: 'login-create', component: LoginCreateComponent }
+      
     ]
 
   }
