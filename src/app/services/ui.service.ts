@@ -6,8 +6,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   providedIn: 'root'
 })
 export class UiService {
-  
-   
+
+
   constructor(private snackBar: MatSnackBar) {
   }
 
@@ -15,8 +15,8 @@ export class UiService {
     this.snackBar.open(msg, 'X', {
       duration: 3000,
       horizontalPosition: "center",
-      verticalPosition: "top"
+      verticalPosition: "bottom"
     });
   }
-  
+
 }
