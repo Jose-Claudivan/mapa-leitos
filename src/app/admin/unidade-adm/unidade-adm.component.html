@@ -1,6 +1,6 @@
 <!-- Main content -->
   <section class="content">
-      
+
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -12,6 +12,7 @@
               <thead>
                 <tr>
                   <th>Nome</th>
+                  <th>CNPJ</th>
                   <th>latitude</th>
                   <th>longitude</th>
                 </tr>
@@ -19,13 +20,14 @@
               <tbody>
                  <tr *ngFor="let u of unidades">
                   <td >{{u.nome}}</td>
+                  <td >{{u.cnpj}}</td>
                   <td >{{u.latitude}}</td>
-                  <td >{{u.longitude}}</td>              
-                </tr>               
+                  <td >{{u.longitude}}</td>
+                </tr>
               </tbody>
             </table>
           </div><!-- /.box-body -->
         </div><!-- /.box -->
       </div><!-- /.col -->
     </div><!-- /.row -->
-  </section><!-- /.content -->  
+  </section><!-- /.content -->
