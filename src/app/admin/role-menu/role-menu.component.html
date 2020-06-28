@@ -1,0 +1,23 @@
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+  <span class="group-menu" *ngFor="let menu of selectMenus">
+  <li  class="nav-header">{{menu.titulo}}</li>
+  <li *ngFor="let categoria of menu.categorias" class="nav-item has-treeview">
+      <a href="#" class="nav-link">
+        <i class="{{categoria.icon}}"></i>
+        <p style="padding-left: 5px;">
+          {{categoria.nome}}
+          <i class="fas fa-angle-left right"></i>
+       </p>
+      </a>
+      <ul class="nav nav-treeview">
+          <li class="nav-item" *ngFor="let item of categoria.itens">
+            <a routerLink="{{item.url}}" class="nav-link">
+              <i class="{{item.icone}}"></i>
+              <p>{{item.nome}}</p>
+            </a>
+          </li>
+
+      </ul>
+    </li>
+  </span>
+</ul>

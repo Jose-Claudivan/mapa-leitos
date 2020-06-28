@@ -1,3 +1,4 @@
+import { RoleMenuComponent } from './admin/role-menu/role-menu.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AgmCoreModule } from '@agm/core';
@@ -59,7 +60,8 @@ import { httpInterceptorProviders } from './http-interceptors/';
     LoginDeleteComponent,
     AdminComponent,
     MainComponent,
-    AutenticacaoComponent
+    AutenticacaoComponent,
+    RoleMenuComponent
   ],
   exports:[
     HeaderComponent,
@@ -90,7 +92,7 @@ import { httpInterceptorProviders } from './http-interceptors/';
     MatPaginatorModule,
     MatSortModule,
     //NgbModule.forRoot()
-    
+
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
