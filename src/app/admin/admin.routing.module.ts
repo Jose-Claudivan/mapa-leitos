@@ -35,7 +35,7 @@ const routes: Routes = [
       { path: 'admin', redirectTo: 'unidade-login', pathMatch: 'full' },
       { path: 'unidade-login', component: UnidadeLoginComponent },
       { path: 'login-create', component: LoginCreateComponent }
-      
+
     ]
 
   }
