@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginServiceService } from '../../services/login-service.service';
 import { Login } from '../../models/login';
+import { AccountService } from 'src/app/account/shared/account.service';
 
 @Component({
   selector: 'app-login-create',
@@ -9,6 +10,12 @@ import { Login } from '../../models/login';
   styleUrls: ['./login-create.component.css']
 })
 export class LoginCreateComponent implements OnInit {
+
+  account = {
+    name: '',
+    email: '',
+    password: ''
+  };
 
   login: Login = {
     nome: '',
@@ -32,13 +39,21 @@ export class LoginCreateComponent implements OnInit {
   }
 
   constructor(private loginService: LoginServiceService,
+    private accountService: AccountService,
     private router: Router) { }
 
   ngOnInit(): void {
     
   }
-  onSubmit() {
+  async onSubmit() {
+    try {
+      const result = await this.accountService.createAccount(this.account);
 
+      //exibe uma mensagem
+      console.log(result);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   createLogin(): void {

@@ -40,6 +40,7 @@ import { MainRoutingModule } from './main/main.routing.module';
 import { AdminRoutingModule } from './admin/admin.routing.module';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
+import { httpInterceptorProviders } from './http-interceptors/';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,7 @@ import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
     //NgbModule.forRoot()
     
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
