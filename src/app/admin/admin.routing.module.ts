@@ -12,6 +12,7 @@ import { LoginDeleteComponent } from './login-delete/login-delete.component';
 import { AutenticacaoComponent } from '../autenticacao/autenticacao.component';
 import { AuthGuard } from '../account/shared/auth.guard';
 import { MainComponent } from '../main/main.component';
+import { LoginReadComponent } from './login-read/login-read.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
     path: 'admin', component: AdminComponent, children: [
       //{ path: 'admin' , component: AdminComponent },
       { path: 'unidade-create', component: UnidadeCreateComponent },
+      { path: 'login-read', component: LoginReadComponent},
       { path: 'login-update/:id', component: LoginUpdateComponent },
       { path: 'login-delete/:id', component: LoginDeleteComponent },
       { path: 'situacao', component: SituacaoComponent },
