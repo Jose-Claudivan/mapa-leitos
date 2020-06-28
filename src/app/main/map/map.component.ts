@@ -14,10 +14,10 @@ declare var google: any;
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit{
-  
+
   // google maps zoom level
   zoom: number = 15;
-  
+
   // initial center position for the map
   //lat: number = -8.619084;
   //lng: number = -35.900808;
@@ -25,7 +25,7 @@ export class MapComponent implements OnInit{
   lat: number
   lng: number
 
-  unidades: Unidade[] 
+  unidades: Unidade[]
   unidadeSelected: Unidade
   iconRed
   iconYellow
@@ -41,7 +41,7 @@ export class MapComponent implements OnInit{
   btnRotaName: string
 
   distance: number;
-  
+
   constructor(private unidadeService: UnidadeService, private locationService: LocationService) { }
 
   ngOnInit(): void {
@@ -51,9 +51,9 @@ export class MapComponent implements OnInit{
           this.lat = pos.lat
           this.lng = pos.lng
 
-          this.origin = { 
+          this.origin = {
             lat: this.lat,
-            lng: this.lng 
+            lng: this.lng
         };
         })
 
@@ -95,8 +95,8 @@ export class MapComponent implements OnInit{
             strokeWeight: 0,
             scale: 1
         }
-        
-        
+
+
 
         this.unidadeService.list(new QueryOptions).
                 subscribe( unidades => {
@@ -105,13 +105,13 @@ export class MapComponent implements OnInit{
                 });
   }
 
-    
+
 
   setDestination(){
-    this.destination = { 
-            lat: +this.unidadeSelected.latitude, 
-            lng: +this.unidadeSelected.longitude
-        };  
+    this.destination = {
+            lat: this.unidadeSelected.latitude,
+            lng: this.unidadeSelected.longitude
+        };
   }
 
 
@@ -123,7 +123,7 @@ export class MapComponent implements OnInit{
 
     console.log(`clicked the marker: ${unidade.nome || index}`)
   }
-  
+
   mapClicked($event: MouseEvent) {
     this.markers.push({
       lat: $event.coords.lat,
@@ -133,7 +133,7 @@ export class MapComponent implements OnInit{
   }
 
   toString(value){
-    return value.toString()
+    return (value!=null?value.toString():"X")
   }
 
   getIcon(unidade){
@@ -147,7 +147,7 @@ export class MapComponent implements OnInit{
         return this.iconGreen
     }
   }
-  
+
   markerDragEnd(m: marker, $event: MouseEvent) {
     console.log('dragEnd', m, $event);
   }
@@ -165,7 +165,7 @@ export class MapComponent implements OnInit{
   chamarUber(){
     alert("Chamando Uber")
   }
-  
+
   changeVisible(){
     this.visible = true
   }
@@ -206,7 +206,7 @@ export class MapComponent implements OnInit{
 		  draggable: true
 	  }
   ]
- 
+
 }
 
 
