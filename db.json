@@ -1,41 +1,23 @@
 {
   "unidade": [
     {
-      "id": 1,
-      "cnpj": 1234567890,
-      "nome": "UPA VASSOURAL",
-      "latitude": -8.619084,
-      "longitude": -35.970808,
-      "leitos_totais": 30,
-      "leitos_disponiveis": 20,
-      "login": "rendeiras",
-      "senha": "1234567"
-    },
-    {
-      "id": 2,
-      "cnpj": 1234567890,
-      "nome": "UPA RENDEIRAS",
-      "latitude": -8.719084,
-      "longitude": -35.970908,
-      "leitos_totais": 30,
-      "leitos_disponiveis": 2,
-      "login": "rendeiras",
-      "senha": "1234567"
-    },
-    {
       "id": 3,
       "nome": "UPA BOA VISTA",
       "latitude": -8.619084,
       "longitude": -35.750808,
       "leitos_totais": 30,
       "leitos_disponiveis": 9,
-      "login": "rendeiras",
-      "senha": "1234567"
+      "login": "boa vista",
+      "senha": "1234567",
+      "email": "boavista@upa"
     },
     {
-      "login": "admin",
-      "senha": "admin",
-      "id": 4
+      "nome": "Teste Cadastro Front",
+      "cpf": "0101010101",
+      "email": "testefornt@yahoo.com",
+      "login": "testeFront",
+      "senha": "0123",
+      "id": 7
     }
   ]
 }

@@ -1,4 +1,11 @@
+import { Unidade } from './unidade';
+
 export interface Login {
-    login: string
-    senha: string
+    id?: number;
+    nome: string;
+    cpf: string;
+    email: string;
+    login: string;
+    senha: string;
+    unidade: Unidade
 }
