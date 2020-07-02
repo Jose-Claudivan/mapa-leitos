@@ -11,7 +11,7 @@ export class UnidadeLoginComponent implements OnInit {
 
   login = {
     email: '',
-    password: ''
+    senha: ''
   }
 
   constructor(
@@ -26,7 +26,7 @@ export class UnidadeLoginComponent implements OnInit {
       const result = await this.accountService.login(this.login);
       console.log(`login realizado: ${result}`);
 
-      //navega para a rota vazia novamente
+      //navega para a rota admin novamente
       this.router.navigate(['admin']);
     } catch (error) {
       console.error(error);

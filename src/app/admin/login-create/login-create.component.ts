@@ -14,7 +14,7 @@ export class LoginCreateComponent implements OnInit {
   account = {
     name: '',
     email: '',
-    password: ''
+    senha: ''
   };
 
   login: Login = {
