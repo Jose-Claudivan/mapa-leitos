@@ -37,10 +37,7 @@ const routes: Routes = [
       { path: 'login-create', component: LoginCreateComponent }
 
     ]
-
   }
-
-
 ];
 
 @NgModule({

@@ -9,7 +9,6 @@ import { Observable } from 'rxjs';
 })
 export class AccountService {
 
-  BASE_URL = "http://localhost:8080/api/auth/signin";
   constructor(private http: HttpClient) { }
   //confirmar a url do LOGIN no BACK
   //access_token é o token que sera retornado pela api
@@ -17,7 +16,7 @@ export class AccountService {
     console.log('USUARIO' + user);
     //localStorage.setItem('token', 'testeStorage');
   
-    return this.http.post<any>(this.BASE_URL, user).subscribe((result) => {
+    return this.http.post<any>(`${REQUEST_BASE_URL}/api/auth/signin`, user).subscribe((result) => {
       localStorage.setItem('token', result.accessToken);
       console.log(result);
     },

@@ -27,19 +27,9 @@ export class UnidadeLoginComponent implements OnInit {
       console.log(`login realizado: ${result}`);
 
       //navega para a rota admin novamente
-      this.router.navigate(['admin']);
+      this.router.navigate(['/admin/situacao']);
     } catch (error) {
       console.error(error);
     }
   }
-
-  /*login() : void {
-    if(this.username == 'admin' && this.password == 'admin') {
-      //alert("LOGIN REALIZADO COM SUCESSO!");
-      this.router.navigate(["situacao"]);
-    } else {
-      alert("LOGIN FALHOU!");
-    }
-  }*/
-  
 }
