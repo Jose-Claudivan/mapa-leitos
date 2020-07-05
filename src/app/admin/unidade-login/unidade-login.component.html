@@ -22,6 +22,8 @@
    <!-- <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>-->
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="form.form.invalid">Entrar</button>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="form.form.invalid">
+      Entrar
+    </button><a class="linkCriarLogin" href="/admin/login-create">Cadastre-se</a>
   </mat-card-actions>
 </mat-card>
