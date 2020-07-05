@@ -21,7 +21,6 @@ export class LoginCreateComponent implements OnInit {
     nome: '',
     cpf: '',
     email: '',
-    login: '',
     senha: '',
     unidade: {
       id:1,
