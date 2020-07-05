@@ -22,8 +22,6 @@ export class AccountService {
     },
     (err) => {console.log(err)});
     
-   
-   
     /*if (result && result.accessToken) {
       console.log('Login: '  + result);
       window.localStorage.setItem('token', result.accessToken);
@@ -31,6 +29,11 @@ export class AccountService {
       return true;
     }
     return false;*/
+  }
+
+  logout() {
+    window.localStorage.clear();
+    alert("Você está saindo do Sistema!")
   }
   //confirmar a url do LOGIN no BACK
   async createAccount(account: any) {
