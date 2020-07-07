@@ -23,9 +23,9 @@ export class UnidadeLoginComponent implements OnInit {
 
   async onSubmit() {
     try {
-      const result = await this.accountService.login(this.login);
-      console.log(`login realizado: ${result}`);
+      const result = this.accountService.login(this.login);
 
+      console.log("RESULT QUE EU QUERO: " + result);
       //navega para a rota admin novamente
       this.router.navigate(['/admin/situacao']);
     } catch (error) {

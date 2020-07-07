@@ -13,22 +13,11 @@ export class AccountService {
   //confirmar a url do LOGIN no BACK
   //access_token é o token que sera retornado pela api
   login(user: any) {
-    console.log('USUARIO' + user);
-    //localStorage.setItem('token', 'testeStorage');
-  
     return this.http.post<any>(`${REQUEST_BASE_URL}/api/auth/signin`, user).subscribe((result) => {
       localStorage.setItem('token', result.accessToken);
       console.log(result);
     },
     (err) => {console.log(err)});
-    
-    /*if (result && result.accessToken) {
-      console.log('Login: '  + result);
-      window.localStorage.setItem('token', result.accessToken);
-      console.log('AcessToken: ' + result.accessToken);
-      return true;
-    }
-    return false;*/
   }
 
   logout() {
@@ -42,7 +31,6 @@ export class AccountService {
   }
 
   getAuthorizationToken() {
-    console.log('Autorizacao: ' + window.localStorage.getItem('token'));
     const token = window.localStorage.getItem('token');
     return token;
   }
