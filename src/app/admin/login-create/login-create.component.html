@@ -22,10 +22,7 @@
             <input matInput placeholder="Confirmar Senha" required>
         </mat-form-field>
     </form>
-   <!-- <button mat-raised-button (click)= "createLogin()" color="primary">
-        Salvar
-    </button>-->
-    <button mat-raised-button color="primary" [disabled]="form.form.invalid">
+    <button mat-raised-button (click)="createLogin()" color="primary" [disabled]="form.form.invalid">
         Criar minha conta
     </button>
     <button mat-raised-button (click)= "cancelLogin()">

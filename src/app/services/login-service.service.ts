@@ -23,7 +23,7 @@ export class LoginServiceService {
   }
   
   create(login: Login): Observable<Login> {
-    console.log(login);
+    console.log("Valores do Login: " + login);
     return this.http.post<Login>(`${REQUEST_BASE_URL}/api/auth/signup`, login)
   }
 
