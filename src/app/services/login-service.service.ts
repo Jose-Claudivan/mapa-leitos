@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient } from '@angular/common/http';
+import { REQUEST_BASE_URL } from '../models/request';
 import { Login } from '../models/login';
 import { Observable } from 'rxjs';
 
@@ -20,9 +21,10 @@ export class LoginServiceService {
       verticalPosition: "top"
     });
   }
+  
   create(login: Login): Observable<Login> {
-    console.log(login);
-    return this.http.post<Login>(this.testeUrl, login)
+    console.log("Valores do Login: " + login);
+    return this.http.post<Login>(`${REQUEST_BASE_URL}/api/auth/signup`, login)
   }
 
   read(): Observable<Login[]> {

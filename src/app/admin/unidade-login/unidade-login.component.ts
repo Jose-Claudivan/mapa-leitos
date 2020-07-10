@@ -11,7 +11,7 @@ export class UnidadeLoginComponent implements OnInit {
 
   login = {
     email: '',
-    password: ''
+    senha: ''
   }
 
   constructor(
@@ -23,23 +23,20 @@ export class UnidadeLoginComponent implements OnInit {
 
   async onSubmit() {
     try {
-      const result = await this.accountService.login(this.login);
-      console.log(`login realizado: ${result}`);
+      const result = this.accountService.login(this.login).subscribe((result) => {
+        localStorage.setItem('token', result.accessToken);
+        console.log("RESULT QUE EU QUERO: " + result);
 
-      //navega para a rota vazia novamente
-      this.router.navigate(['admin']);
+        //navega para a rota admin novamente
+        this.router.navigate(['/admin/situacao']);
+      },
+      (err) => {console.log(err)});
+
+
+
+
     } catch (error) {
       console.error(error);
     }
   }
-
-  /*login() : void {
-    if(this.username == 'admin' && this.password == 'admin') {
-      //alert("LOGIN REALIZADO COM SUCESSO!");
-      this.router.navigate(["situacao"]);
-    } else {
-      alert("LOGIN FALHOU!");
-    }
-  }*/
-  
 }

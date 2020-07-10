@@ -14,14 +14,13 @@ export class LoginCreateComponent implements OnInit {
   account = {
     name: '',
     email: '',
-    password: ''
+    senha: ''
   };
 
   login: Login = {
     nome: '',
     cpf: '',
     email: '',
-    login: '',
     senha: '',
     unidade: {
       id:1,
@@ -59,7 +58,7 @@ export class LoginCreateComponent implements OnInit {
   createLogin(): void {
     this.loginService.create(this.login).subscribe(() => {
       this.loginService.showMsg('Cadastro realizado com sucesso!');
-      this.router.navigate(['/unidade-create']);
+      this.router.navigate(['/admin/unidade-login']);
     }) 
   }
 

@@ -1,5 +1,14 @@
-
 <mat-toolbar class="header mat-elevation-z4">
+
+    <button class="botaoMenu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item routerLink="/admin/unidade-login">
+            <mat-icon>login</mat-icon>
+            <span>Entrar</span>
+        </button>
+    </mat-menu>
     <span>
         <a>
             <img class="logo" src="assets/images/logo-clickLeitos.png" alt="logo" />
@@ -10,21 +19,5 @@
             Encontre leitos disponiveis
         </a>
     </span>
-    <button class="botaoMenu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-        <button mat-menu-item routerLink="admin/unidade-login">
-            <mat-icon>login</mat-icon>
-            <span>Login</span>
-        </button>
-        <button mat-menu-item routerLink="admin/login-create">
-            <mat-icon>playlist_add_check</mat-icon>
-            <span>Cadastre-se</span>
-        </button>
-        <button mat-menu-item>
-            <mat-icon>notifications_off</mat-icon>
-            <span>Disable alerts</span>
-        </button>
-    </mat-menu>
+
 </mat-toolbar>

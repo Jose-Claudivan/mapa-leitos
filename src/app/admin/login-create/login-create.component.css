@@ -1,9 +1,15 @@
+.card {
+    width: 500px;
+    margin: 0 auto;
+   
+}
+
 form {
     display: flex;
     flex-direction: column;
 }
 
 button {
-    margin-top: 20px;
+    margin-top: -10px;
     margin-right: 15px;
 }

@@ -5,7 +5,6 @@ export interface Login {
     nome: string;
     cpf: string;
     email: string;
-    login: string;
     senha: string;
     unidade: Unidade
 }

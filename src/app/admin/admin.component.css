@@ -1,0 +1,8 @@
+.btnLogout {
+    display: flex;
+    position: fixed;
+    right: 15px;
+
+    display: flex;
+    justify-content: flex-end;
+}

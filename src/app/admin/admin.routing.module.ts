@@ -27,7 +27,7 @@ const routes: Routes = [
       { path: 'unidades', component: UnidadeAdmComponent }
       //{ path: 'situacao', component: SituacaoComponent }
     ],
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   //oque estiver dentro desse bloco, sera protegido
   {
@@ -37,10 +37,7 @@ const routes: Routes = [
       { path: 'login-create', component: LoginCreateComponent }
 
     ]
-
   }
-
-
 ];
 
 @NgModule({

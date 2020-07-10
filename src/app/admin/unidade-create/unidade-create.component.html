@@ -1,59 +1,39 @@
-<section class="content-header">
-    <h1>
-      <small>Cadastrar unidade</small>
-    </h1>
-  </section>
+<mat-card class="card">
 
-<section class="content">
+  <mat-card-title>
+    Cadastrar Unidade
+  </mat-card-title>
 
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
 
-      <form id="form1" #f="ngForm"
-        (ngSubmit)="onSubmit()" class="form1" method="post">
+    <mat-form-field>
+      <input matInput placeholder="Nome da Unidade" [(ngModel)]="unidade.nome" name="nome" required>
+    </mat-form-field>
 
+    <mat-form-field>
+      <input matInput placeholder="CNPJ" [(ngModel)]="unidade.cnpj" name="cnpj" required>
+    </mat-form-field>
 
-        <div class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="Latitude" [(ngModel)]="unidade.latitude" name="latitude" required>
+    </mat-form-field>
 
-          <div class="form-group col-md-6">
-            <label for="inputEmail4">Nome</label>
-            <input type="text" [(ngModel)]="unidade.nome" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
-          </div>
-          <div class="form-group col-md-6">
-             <label for="inputEmail4">CNPJ</label>
-             <input type="text" [(ngModel)]="unidade.cnpj" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
-          </div>
-          
-        </div>
+    <mat-form-field>
+      <input matInput placeholder="Longitude" [(ngModel)]="unidade.longitude" name="longitude" required>
+    </mat-form-field>
 
-        <div class="form-row">
+    <mat-form-field>
+      <input matInput placeholder="Quantidade total de leitos" [(ngModel)]="unidade.leito.total"
+        name="quantidade total de leitos" required>
+    </mat-form-field>
 
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Latitude</label>
-              <input type="text" [(ngModel)]="unidade.latitude" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
-            </div>
-            <div class="form-group col-md-6">
-               <label for="inputEmail4">Longitude</label>
-               <input type="text" [(ngModel)]="unidade.longitude" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
-            </div>
-            
-        </div>
+    <mat-form-field>
+      <input matInput placeholder="Quantidade de leitos disponíveis" [(ngModel)]="unidade.leito.disponiveis"
+        name="quantidade de leitos disponiveis" required>
+    </mat-form-field>
 
-        <div class="form-row">
-
-            <div class="form-group col-md-6">
-              <label for="inputEmail4">Quantidade total de leitos</label>
-              <input type="text" [(ngModel)]="unidade.leito.total" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
-            </div>
-            <div class="form-group col-md-6">
-               <label for="inputEmail4">Quantidade de leitos disponíveis</label>
-               <input type="text" [(ngModel)]="unidade.leito.disponiveis" name="Nome" id="nome" class="form-control" placeholder="Nome" required>
-            </div>
-            
-        </div>
-
-        
-
-        <button type="submit"  class="btn btn-lg btn-primary fa fa-save" align="right">
-            <b style="margin-left: 10px"> Salvar</b>
-          </button>
-      </form>
-</section>
+  </form>
+  <button mat-raised-button (click)="onSubmit()" color="primary" [disabled]="form.form.invalid">
+    Salvar
+  </button>
+</mat-card>

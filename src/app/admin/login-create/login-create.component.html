@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="card">
     <mat-card-title>
         Novo Usuario
     </mat-card-title>
@@ -16,19 +16,13 @@
             <input matInput placeholder="E-mail" [(ngModel)]="login.email" name="email" required>
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Login" [(ngModel)]="login.login" name="login" required>
-        </mat-form-field>
-        <mat-form-field>
             <input matInput placeholder="Senha" [(ngModel)]="login.senha" name="senha" required>
         </mat-form-field>
         <mat-form-field>
             <input matInput placeholder="Confirmar Senha" required>
         </mat-form-field>
     </form>
-   <!-- <button mat-raised-button (click)= "createLogin()" color="primary">
-        Salvar
-    </button>-->
-    <button mat-raised-button color="primary" [disabled]="form.form.invalid">
+    <button mat-raised-button (click)="createLogin()" color="primary" [disabled]="form.form.invalid">
         Criar minha conta
     </button>
     <button mat-raised-button (click)= "cancelLogin()">

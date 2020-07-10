@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { REQUEST_BASE_URL } from '../../models/request';
 import * as jwt_decode from 'jwt-decode';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,13 +12,13 @@ export class AccountService {
   constructor(private http: HttpClient) { }
   //confirmar a url do LOGIN no BACK
   //access_token é o token que sera retornado pela api
-  async login(user: any) {
-    const result = await this.http.post<any>(`${REQUEST_BASE_URL}/auth/login`, user).toPromise();
-    if (result && result.access_token) {
-      window.localStorage.setItem('token', result.access_token);
-      return true;
-    }
-    return false;
+  login(user: any) {
+    return this.http.post<any>(`${REQUEST_BASE_URL}/api/auth/signin`, user)
+  }
+
+  logout() {
+    window.localStorage.clear();
+    alert("Você está saindo do Sistema!")
   }
   //confirmar a url do LOGIN no BACK
   async createAccount(account: any) {
@@ -50,7 +51,7 @@ export class AccountService {
     if (date === undefined) {
       return false;
     }
-    
+
     return !(date.valueOf() > new Date().valueOf());
   }
 
