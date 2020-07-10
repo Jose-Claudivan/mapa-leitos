@@ -23,11 +23,18 @@ export class UnidadeLoginComponent implements OnInit {
 
   async onSubmit() {
     try {
-      const result = this.accountService.login(this.login);
+      const result = this.accountService.login(this.login).subscribe((result) => {
+        localStorage.setItem('token', result.accessToken);
+        console.log("RESULT QUE EU QUERO: " + result);
 
-      console.log("RESULT QUE EU QUERO: " + result);
-      //navega para a rota admin novamente
-      this.router.navigate(['/admin/situacao']);
+        //navega para a rota admin novamente
+        this.router.navigate(['/admin/situacao']);
+      },
+      (err) => {console.log(err)});
+
+
+
+
     } catch (error) {
       console.error(error);
     }

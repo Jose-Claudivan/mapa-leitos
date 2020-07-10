@@ -13,11 +13,7 @@ export class AccountService {
   //confirmar a url do LOGIN no BACK
   //access_token é o token que sera retornado pela api
   login(user: any) {
-    return this.http.post<any>(`${REQUEST_BASE_URL}/api/auth/signin`, user).subscribe((result) => {
-      localStorage.setItem('token', result.accessToken);
-      console.log(result);
-    },
-    (err) => {console.log(err)});
+    return this.http.post<any>(`${REQUEST_BASE_URL}/api/auth/signin`, user)
   }
 
   logout() {
@@ -55,7 +51,7 @@ export class AccountService {
     if (date === undefined) {
       return false;
     }
-    
+
     return !(date.valueOf() > new Date().valueOf());
   }
 
