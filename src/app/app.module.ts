@@ -42,6 +42,7 @@ import { AdminRoutingModule } from './admin/admin.routing.module';
 import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 import { httpInterceptorProviders } from './http-interceptors/';
+import { SintomasComponent } from './main/sintomas/sintomas.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { httpInterceptorProviders } from './http-interceptors/';
     AdminComponent,
     MainComponent,
     AutenticacaoComponent,
-    RoleMenuComponent
+    RoleMenuComponent,
+    SintomasComponent
   ],
   exports:[
     HeaderComponent,
