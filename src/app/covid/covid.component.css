@@ -1,0 +1,11 @@
+.card {
+    width: 680px;
+    margin: 0 auto;
+}
+
+.sintomas {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 5px;
+}

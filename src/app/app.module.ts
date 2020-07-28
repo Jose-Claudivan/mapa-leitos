@@ -26,7 +26,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon'
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { LoginReadComponent } from './admin/login-read/login-read.component';
@@ -43,6 +44,7 @@ import { AutenticacaoComponent } from './autenticacao/autenticacao.component';
 
 import { httpInterceptorProviders } from './http-interceptors/';
 import { SintomasComponent } from './main/sintomas/sintomas.component';
+import { CovidComponent } from './covid/covid.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,8 @@ import { SintomasComponent } from './main/sintomas/sintomas.component';
     MainComponent,
     AutenticacaoComponent,
     RoleMenuComponent,
-    SintomasComponent
+    SintomasComponent,
+    CovidComponent
   ],
   exports:[
     HeaderComponent,
@@ -82,6 +85,7 @@ import { SintomasComponent } from './main/sintomas/sintomas.component';
     MatButtonModule,
     MatTableModule,
     MatMenuModule,
+    MatListModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatIconModule,
